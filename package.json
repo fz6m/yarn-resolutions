@@ -1,6 +1,6 @@
 {
   "name": "yarn-resolutions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "fz6m",
   "description": "collect and resolve dependency conflicts based on yarn, and get the benefits of product reduction",
   "main": "dist/yarn-resolutions.js",
@@ -18,7 +18,9 @@
     "yarn-resolutions"
   ],
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "bin"
   ],
   "scripts": {
     "cli": "node bin/yarn-resolutions.js",
