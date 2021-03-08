@@ -2,6 +2,7 @@ const semver = require('semver')
 const { hasDiff } = require('../utils')
 const { collectNodeModulesAllDeps } = require('../utils/depend')
 const { includes } = require('lodash')
+const { NO_RESOLVE_CONFLICT_DEPS } = require('../constant')
 
 /**
  * 收集冲突依赖
@@ -60,6 +61,14 @@ function clearNotProdDeps(rootPath, deps) {
 }
 
 /**
+ * 清理一些自定义不需要解决冲突的依赖
+ * @param {Array} deps 收集过冲突的数组
+ */
+function clearCustomDeps(deps) {
+  return deps.filter((dep) => !NO_RESOLVE_CONFLICT_DEPS.includes(dep.name))
+}
+
+/**
  * 清除数组内有指定版本差别的元素
  * @param {Array} deps 依赖版本号的数组
  * @param {Enum|false} mode 比较模式
@@ -98,5 +107,6 @@ module.exports = {
   handleConflict,
   clearDiffVersion,
   clearNotProdDeps,
-  generatorResolution
+  generatorResolution,
+  clearCustomDeps
 }

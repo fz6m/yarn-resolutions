@@ -7,7 +7,10 @@ const vType = {
 
 const name = pkg.name
 
+const NO_RESOLVE_CONFLICT_DEPS = ['source-map', 'fs-extra', 'git-raw-commits']
+
 module.exports = {
   vType,
-  name
+  name,
+  NO_RESOLVE_CONFLICT_DEPS
 }

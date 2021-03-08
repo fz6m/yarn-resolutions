@@ -5,6 +5,7 @@ const {
   handleConflict,
   clearNotProdDeps,
   clearDiffVersion,
+  clearCustomDeps,
   generatorResolution
 } = require('../core/handleConflict')
 const { autoWriteToPkg, generateWebPage } = require('../resolutions')
@@ -44,6 +45,7 @@ const run = (options) => {
   // 5. 清理不必要的冲突
   const rootPath = process.cwd()
   conflictDeps = clearNotProdDeps(rootPath, conflictDeps)
+  conflictDeps = clearCustomDeps(conflictDeps)
   conflictDeps = clearDiffVersion(conflictDeps, mode)
   spinner.stop()
 
