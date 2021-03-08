@@ -2,7 +2,7 @@
 
 基于 yarn 自动收集依赖冲突，可视化给出 resolutions 建议，以此得到产物减小的收益
 
-_version: 1.0.3_
+_version: 1.0.4_
 
 - 为什么要使用 yarn resolutions ？
 
