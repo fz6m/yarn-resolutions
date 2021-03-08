@@ -1,6 +1,6 @@
 {
   "name": "yarn-resolutions",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "fz6m",
   "description": "collect and resolve dependency conflicts based on yarn, and get the benefits of product reduction",
   "main": "dist/yarn-resolutions.js",
